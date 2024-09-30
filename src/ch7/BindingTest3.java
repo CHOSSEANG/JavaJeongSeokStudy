@@ -5,12 +5,15 @@ public class BindingTest3 {
     public static void main(String[] args) {
         Parent5 p = new Child5();
         Child5 c = new Child5();
+        Child5 d = (Child5) p;
 
         System.out.println("p.x = " + p.x);
+        System.out.println("d.x = " + d.x);
         p.method();
-        System.out.println();
-        System.out.println("c.x = " + c.x);
-        c.method();
+        d.method();
+//        System.out.println();
+//        System.out.println("c.x = " + c.x);
+//        c.method();
     }
 }
 
@@ -19,6 +22,35 @@ class Parent5 {
 
     void method() {
         System.out.println("Parent Method");
+    }
+
+    public Parent5() {
+        super();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 }
 
