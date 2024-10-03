@@ -1,7 +1,7 @@
 package ch7;
 
 public class BindingTest3 {
-    // 이해 필요
+    // 복습 필요
     public static void main(String[] args) {
         Parent5 p = new Child5();
         Child5 c = new Child5();
