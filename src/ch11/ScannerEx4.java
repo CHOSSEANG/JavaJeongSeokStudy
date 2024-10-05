@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class ScannerEx4 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Score score = new Score();
         Scanner sc = new Scanner(new File("scoreData.txt"));
 
@@ -45,7 +45,7 @@ class Score {
             return;
         }
 
-        System.out.println("이름   번호  국어   수학.  영어.   총점");
+        System.out.println("이름   번호  국어   수학   영어  총점");
         System.out.println("======================================");
 
         for (int i = 0; i < record.size(); i++) {
@@ -53,7 +53,7 @@ class Score {
         }
 
         System.out.println("======================================");
-        System.out.println(""+Student.format(record.size(),2,Student.RIGHT)+"명 총점 : "
+        System.out.println(Student.format(""+record.size(),2,Student.RIGHT)+"명 총점 : "
                 + Student.format(""+koreanTotal,5,Student.RIGHT)
                 + Student.format(""+mathTotal,6,Student.RIGHT)
                 + Student.format(""+englishTotal,5,Student.RIGHT)
@@ -101,6 +101,22 @@ class Student {
         char[] source = str.toCharArray();
         char[] result = new char[length];
 
-        return "";
+        for (int i = 0; i < result.length; i++) {
+            result[i] = ' ';
+        }
+
+        switch(alignment) {
+            case CENTER:
+                System.arraycopy(source, 0, result, diff / 2, source.length);
+                break;
+            case RIGHT:
+                System.arraycopy(source, 0, result, diff, source.length);
+                break;
+            case LEFT:
+            default:
+                System.arraycopy(source, 0, result, 0, source.length);
+        }
+
+        return new String(result);
     }
 }
