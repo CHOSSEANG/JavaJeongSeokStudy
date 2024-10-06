@@ -45,7 +45,7 @@ class ScoreEvaluation {
         System.out.println(" 4. 프로그램 종료 ");
         System.out.println();
         System.out.println();
-        System.out.println("원하는 메뉴를 선태갛세요.(1~4) : ");
+        System.out.println("원하는 메뉴를 선택하세요.(1~4) : ");
 
         int menu = 0;
 
